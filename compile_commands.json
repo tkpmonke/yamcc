@@ -1,0 +1,70 @@
+[
+  {
+    "arguments": [
+      "/usr/bin/gcc",
+      "-DDEBUG",
+      "-Iinclude",
+      "-m64",
+      "-g",
+      "-std=c99",
+      "-c",
+      "-o",
+      "obj/Debug/files.o",
+      "src/files.c"
+    ],
+    "directory": "/home/turdle/Projects/minecraft",
+    "file": "/home/turdle/Projects/minecraft/src/files.c",
+    "output": "/home/turdle/Projects/minecraft/obj/Debug/files.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/gcc",
+      "-DDEBUG",
+      "-Iinclude",
+      "-m64",
+      "-g",
+      "-std=c99",
+      "-c",
+      "-o",
+      "obj/Debug/terrain.o",
+      "src/terrain.c"
+    ],
+    "directory": "/home/turdle/Projects/minecraft",
+    "file": "/home/turdle/Projects/minecraft/src/terrain.c",
+    "output": "/home/turdle/Projects/minecraft/obj/Debug/terrain.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/gcc",
+      "-DDEBUG",
+      "-Iinclude",
+      "-m64",
+      "-g",
+      "-std=c99",
+      "-c",
+      "-o",
+      "obj/Debug/renderer.o",
+      "src/renderer.c"
+    ],
+    "directory": "/home/turdle/Projects/minecraft",
+    "file": "/home/turdle/Projects/minecraft/src/renderer.c",
+    "output": "/home/turdle/Projects/minecraft/obj/Debug/renderer.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/gcc",
+      "-DDEBUG",
+      "-Iinclude",
+      "-m64",
+      "-g",
+      "-std=c99",
+      "-c",
+      "-o",
+      "obj/Debug/main.o",
+      "src/main.c"
+    ],
+    "directory": "/home/turdle/Projects/minecraft",
+    "file": "/home/turdle/Projects/minecraft/src/main.c",
+    "output": "/home/turdle/Projects/minecraft/obj/Debug/main.o"
+  }
+]
