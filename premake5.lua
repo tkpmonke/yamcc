@@ -10,7 +10,7 @@ project "yamcc"
    includedirs { "include" }
    files { "src/**.c", "include/**.h" }
    
-   -- links {  }
+   links { "GL", "GLEW", "glfw" }
 
    filter "configurations:Debug"
       defines { "DEBUG" }

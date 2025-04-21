@@ -1,5 +1,7 @@
 # exclude build time directories
 bin/
+!bin/textures
+!bin/shaders
 obj/
 
 # exclude build files
