@@ -7,10 +7,10 @@ project "yamcc"
    language "C"
    cdialect "c99"
    targetdir "bin"
-   includedirs { "include" }
+   includedirs { "include", "external" }
    files { "src/**.c", "include/**.h" }
    
-   links { "GL", "GLEW", "glfw" }
+   links { "GL", "GLEW", "glfw", "m" }
 
    filter "configurations:Debug"
       defines { "DEBUG" }

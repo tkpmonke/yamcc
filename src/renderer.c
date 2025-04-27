@@ -1,5 +1,6 @@
 #include "renderer.h"
 #include "files.h"
+#include "texture_atlas.h"
 
 #include <assert.h>
 #include <stdio.h>
@@ -40,7 +41,7 @@ void create_drawable_object(drawable_object* object) {
 	glGetShaderiv(fragment, GL_COMPILE_STATUS, &success);
 	if (!success) {
 		glGetShaderInfoLog(fragment, 512, NULL, info_log);
-		printf("Vertex Shader Failed To Compile > %s", info_log);
+		printf("Fragment Shader Failed To Compile > %s", info_log);
 	}
 
 	
@@ -58,19 +59,35 @@ void create_drawable_object(drawable_object* object) {
 	glGenBuffers(1, &object->ebo);
 
 	glBindBuffer(GL_ARRAY_BUFFER, object->vbo);
-	glBufferData(GL_ARRAY_BUFFER, sizeof(float)*(12+8), object->vertices, GL_STATIC_DRAW); 
+	glBufferData(GL_ARRAY_BUFFER, sizeof(float)*(object->vertex_count*7), object->vertices, GL_STATIC_DRAW); 
 
 	glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, object->ebo);
 	glBufferData(GL_ELEMENT_ARRAY_BUFFER, object->indice_count*sizeof(int), object->indices, GL_STATIC_DRAW);
 
-	glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 5*sizeof(float), (void*)0);
+	/// vertex position
+	glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 7*sizeof(float), (void*)0);
 	glEnableVertexAttribArray(0);
-	glVertexAttribPointer(1, 2, GL_FLOAT, GL_FALSE, 5*sizeof(float), (void*)(3*sizeof(float)));
+	/// texture uv
+	glVertexAttribPointer(1, 2, GL_FLOAT, GL_FALSE, 7*sizeof(float), (void*)(3*sizeof(float)));
 	glEnableVertexAttribArray(1);
+	/// texture offset
+	glVertexAttribPointer(2, 2, GL_FLOAT, GL_FALSE, 7*sizeof(float), (void*)(5*sizeof(float)));
+	glEnableVertexAttribArray(2);
 }
 
-void draw_object(drawable_object* object) {
+void draw_object(drawable_object* object, camera* camera) {
 	glUseProgram(object->program);
+	
+	glUniform1i(glGetUniformLocation(object->program, "atlas"), 0);
+	glActiveTexture(GL_TEXTURE0);
+	glBindTexture(GL_TEXTURE_2D, main_texture_atlas.program);
+	
+	mat4 model,mvp;
+	glm_mat4_identity(model);
+	glm_translate(model, (float*)object->position);
+	glm_mat4_mul(camera->vp, model, mvp);
+	glUniformMatrix4fv(glGetUniformLocation(object->program, "mvp"), 1, GL_FALSE, (float*)mvp);
+
 	glBindVertexArray(object->vao);
 	glDrawElements(GL_TRIANGLES, object->indice_count, GL_UNSIGNED_INT, 0);
 }

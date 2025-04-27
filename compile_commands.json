@@ -4,57 +4,25 @@
       "/usr/bin/gcc",
       "-DDEBUG",
       "-Iinclude",
+      "-Iexternal",
       "-m64",
       "-g",
       "-std=c99",
       "-c",
       "-o",
-      "obj/Debug/files.o",
-      "src/files.c"
+      "obj/Debug/texture_atlas.o",
+      "src/texture_atlas.c"
     ],
-    "directory": "/home/turdle/Projects/minecraft",
-    "file": "/home/turdle/Projects/minecraft/src/files.c",
-    "output": "/home/turdle/Projects/minecraft/obj/Debug/files.o"
+    "directory": "/home/turdle/Projects/yamcc",
+    "file": "/home/turdle/Projects/yamcc/src/texture_atlas.c",
+    "output": "/home/turdle/Projects/yamcc/obj/Debug/texture_atlas.o"
   },
   {
     "arguments": [
       "/usr/bin/gcc",
       "-DDEBUG",
       "-Iinclude",
-      "-m64",
-      "-g",
-      "-std=c99",
-      "-c",
-      "-o",
-      "obj/Debug/terrain.o",
-      "src/terrain.c"
-    ],
-    "directory": "/home/turdle/Projects/minecraft",
-    "file": "/home/turdle/Projects/minecraft/src/terrain.c",
-    "output": "/home/turdle/Projects/minecraft/obj/Debug/terrain.o"
-  },
-  {
-    "arguments": [
-      "/usr/bin/gcc",
-      "-DDEBUG",
-      "-Iinclude",
-      "-m64",
-      "-g",
-      "-std=c99",
-      "-c",
-      "-o",
-      "obj/Debug/renderer.o",
-      "src/renderer.c"
-    ],
-    "directory": "/home/turdle/Projects/minecraft",
-    "file": "/home/turdle/Projects/minecraft/src/renderer.c",
-    "output": "/home/turdle/Projects/minecraft/obj/Debug/renderer.o"
-  },
-  {
-    "arguments": [
-      "/usr/bin/gcc",
-      "-DDEBUG",
-      "-Iinclude",
+      "-Iexternal",
       "-m64",
       "-g",
       "-std=c99",
@@ -63,8 +31,62 @@
       "obj/Debug/main.o",
       "src/main.c"
     ],
-    "directory": "/home/turdle/Projects/minecraft",
-    "file": "/home/turdle/Projects/minecraft/src/main.c",
-    "output": "/home/turdle/Projects/minecraft/obj/Debug/main.o"
+    "directory": "/home/turdle/Projects/yamcc",
+    "file": "/home/turdle/Projects/yamcc/src/main.c",
+    "output": "/home/turdle/Projects/yamcc/obj/Debug/main.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/gcc",
+      "-DDEBUG",
+      "-Iinclude",
+      "-Iexternal",
+      "-m64",
+      "-g",
+      "-std=c99",
+      "-c",
+      "-o",
+      "obj/Debug/renderer.o",
+      "src/renderer.c"
+    ],
+    "directory": "/home/turdle/Projects/yamcc",
+    "file": "/home/turdle/Projects/yamcc/src/renderer.c",
+    "output": "/home/turdle/Projects/yamcc/obj/Debug/renderer.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/gcc",
+      "-DDEBUG",
+      "-Iinclude",
+      "-Iexternal",
+      "-m64",
+      "-g",
+      "-std=c99",
+      "-c",
+      "-o",
+      "obj/Debug/files.o",
+      "src/files.c"
+    ],
+    "directory": "/home/turdle/Projects/yamcc",
+    "file": "/home/turdle/Projects/yamcc/src/files.c",
+    "output": "/home/turdle/Projects/yamcc/obj/Debug/files.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/gcc",
+      "-DDEBUG",
+      "-Iinclude",
+      "-Iexternal",
+      "-m64",
+      "-g",
+      "-std=c99",
+      "-c",
+      "-o",
+      "obj/Debug/terrain.o",
+      "src/terrain.c"
+    ],
+    "directory": "/home/turdle/Projects/yamcc",
+    "file": "/home/turdle/Projects/yamcc/src/terrain.c",
+    "output": "/home/turdle/Projects/yamcc/obj/Debug/terrain.o"
   }
 ]
